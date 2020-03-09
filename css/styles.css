@@ -26,7 +26,7 @@
 
 button {
     height: 70px;
-    width: auto;
+    width: 140px;
     font-size: 30px;
     border: 0;
     border-radius: 5px;
@@ -38,6 +38,10 @@ button {
 button:hover {
     font-size: 31px;
     filter: brightness(110%);
+}
+
+.operator {
+    background-color: lightblue;
 }
 
 .sideRow {
@@ -59,10 +63,14 @@ button:hover {
 .zero {
     grid-column: 1/3;
     grid-row: 6;
+    width: auto;
+}
+
+#clear {
+    background-color: rgb(255, 161, 151)
 }
 
 #equals {
     color: white;
-    background-color: salmon;
-    border-color: salmon;
+    background-color: lightgreen;
 }
