@@ -1,0 +1,68 @@
+#calcBody {
+    width: 600px;
+}
+
+#calc {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 1em;
+}
+
+#calcInputBox {
+    display: flex;
+    grid-column: 1/5;
+    height: 100px;
+    width: 100%;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+#calcInput {    
+    font-size: 30px;
+    color: grey;
+}
+
+button {
+    height: 70px;
+    width: auto;
+    font-size: 30px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #cccccc;
+    color: white;
+    text-shadow: 1px 1px 2px rgb(131, 131, 131);
+}
+
+button:hover {
+    font-size: 31px;
+    filter: brightness(110%);
+}
+
+.sideRow {
+    grid-column: 4/5;
+}
+
+.secondRow {
+    grid-row: 3;
+}
+
+.thirdRow {
+    grid-row: 4;
+}
+
+.fourthRow {
+    grid-row: 5;
+}
+
+.zero {
+    grid-column: 1/3;
+    grid-row: 6;
+}
+
+#equals {
+    color: white;
+    background-color: salmon;
+    border-color: salmon;
+}
