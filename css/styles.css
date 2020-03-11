@@ -1,5 +1,6 @@
 #calcBody {
     width: 600px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #calc {
@@ -20,19 +21,20 @@
 }
 
 #calcInput {    
-    font-size: 30px;
+    font-size: 40px;
     color: grey;
 }
 
 button {
     height: 70px;
     width: 140px;
-    font-size: 30px;
+    font-size: 35px;
     border: 0;
     border-radius: 5px;
     background-color: #cccccc;
     color: white;
     text-shadow: 1px 1px 2px rgb(131, 131, 131);
+    font-family: 'Roboto', sans-serif;
 }
 
 button:hover {
