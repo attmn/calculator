@@ -17,8 +17,8 @@ calcEntrys.forEach(calcEntry => {
 
 function calculate(array) {
   try {
-    sum = eval(inputArray.join(""));
-    roundedSum = Math.round((sum + calcEntry.EPSILON) * 100) / 100;
+    sum = eval(array.join(""));
+    roundedSum = Math.round((sum + Number.EPSILON) * 100) / 100;
     calcInput.textContent = roundedSum;
     inputArray = [roundedSum];
   } catch (err) {
