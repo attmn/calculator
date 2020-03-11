@@ -5,6 +5,7 @@ const calcInput = document.querySelector("#calcInput");
 const lastAnswer = document.querySelector("#lastAnswer");
 
 let inputArray = [];
+let roundedSum = 0;
 
 numbers.forEach(number => {
   number.addEventListener("click", () => {
@@ -56,7 +57,7 @@ document.addEventListener(
   false
 );
 
-//Use numbers & operators on keyboard
+//Use numbers on keyboard
 document.addEventListener(
   "keydown",
   function(e) {
@@ -69,10 +70,38 @@ document.addEventListener(
   false
 );
 
+//Use operators on keyboard
 document.addEventListener(
   "keydown",
   function(e) {
-    console.log(parseInt(e.key));
+    switch (e.key) {
+      case "*":
+      case "/":
+      case "+":
+      case "-":
+      case "(":
+      case ")":
+        inputArray.push(e.key);
+        calcInput.textContent = inputArray.join("");
+        console.log(inputArray);
+        break;
+      case "=":
+        calculate(inputArray);
+        break;
+      default:
+        break;
+    }
+  },
+  false
+);
+
+//Bring up last answer
+lastAnswer.addEventListener(
+  "click",
+  () => {
+    inputArray.push(roundedSum);
+    calcInput.textContent = inputArray.join("");
+    console.log(inputArray);
   },
   false
 );
