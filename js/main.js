@@ -1,4 +1,4 @@
-const numbers = document.querySelectorAll(".number");
+const calcEntrys = document.querySelectorAll(".calcEntry");
 const equals = document.querySelector("#equals");
 const clear = document.querySelector("#clear");
 const calcInput = document.querySelector("#calcInput");
@@ -7,9 +7,9 @@ const lastAnswer = document.querySelector("#lastAnswer");
 let inputArray = [];
 let roundedSum = 0;
 
-numbers.forEach(number => {
-  number.addEventListener("click", () => {
-    inputArray.push(number.value);
+calcEntrys.forEach(calcEntry => {
+  calcEntry.addEventListener("click", () => {
+    inputArray.push(calcEntry.value);
     calcInput.textContent = inputArray.join("");
     console.log(inputArray);
   });
@@ -18,7 +18,7 @@ numbers.forEach(number => {
 function calculate(array) {
   try {
     sum = eval(inputArray.join(""));
-    roundedSum = Math.round((sum + Number.EPSILON) * 100) / 100;
+    roundedSum = Math.round((sum + calcEntry.EPSILON) * 100) / 100;
     calcInput.textContent = roundedSum;
     inputArray = [roundedSum];
   } catch (err) {
@@ -57,7 +57,7 @@ document.addEventListener(
   false
 );
 
-//Use numbers on keyboard
+//Use calcEntrys on keyboard
 document.addEventListener(
   "keydown",
   function(e) {
