@@ -18,12 +18,17 @@ calcEntrys.forEach(calcEntry => {
 function calculate(array) {
   try {
     sum = eval(array.join(""));
-    roundedSum = Math.round((sum + Number.EPSILON) * 100) / 100;
-    calcInput.textContent = roundedSum;
-    inputArray = [roundedSum];
+    if (sum === Infinity) {
+      calcInput.textContent = "CALCULATION ERROR";
+      inputArray = [];
+    } else if (typeof sum == "number") {
+      roundedSum = Math.round((sum + Number.EPSILON) * 100) / 100;
+      calcInput.textContent = roundedSum;
+      inputArray = [roundedSum];
+    }
   } catch (err) {
     calcInput.textContent = "CALCULATION ERROR";
-    nputArray = [];
+    inputArray = [];
   }
 }
 
@@ -38,8 +43,8 @@ equals.addEventListener(
 clear.addEventListener(
   "click",
   () => {
-    inputArray = [];
-    calcInput.textContent = "";
+    inputArray.splice(-1, 1);
+    calcInput.textContent = inputArray.join("");
   },
   false
 );
@@ -86,6 +91,7 @@ document.addEventListener(
         console.log(inputArray);
         break;
       case "=":
+      case "Enter":
         calculate(inputArray);
         break;
       default:
